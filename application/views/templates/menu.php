@@ -1,5 +1,7 @@
+<body>
+    
 <!-- site-navigation start -->  
-<nav id="mainNavigation" class="navbar navbar-dafault main-navigation" role="navigation">
+<nav id="mainNavigation" class="navbar navbar-default main-navigation" role="navigation">
     <div class="container">
         
         <div class="navbar-header">
@@ -14,7 +16,7 @@
             <!-- navbar logo -->
             <div class="navbar-brand">
                 <span class="sr-only">Mi Le International B.V.</span>
-                <a href="index.html">
+                <a href="<?php echo site_url('pages/view/home'); ?>">
                     <img src="<?php echo base_url(); ?>assets/img/main_logo.png" class="img-responsive center-block" alt="logo">
                 </a>
             </div>
@@ -35,15 +37,15 @@
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>products</span></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="<?php echo site_url('category/products/1'); ?>">Frozen</a>
+                            <a href="<?php echo site_url('products/2'); ?>">Frozen</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('category/products/4'); ?>">Dry</a>
+                            <a href="<?php echo site_url('products/5'); ?>">Dry</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('category'); ?>">All</a>
+                            <a href="<?php echo site_url('products'); ?>">All</a>
                         </li>
                     </ul>  <!-- end of /.dropdown-menu -->
                 </li> <!-- end of /.dropdown -->

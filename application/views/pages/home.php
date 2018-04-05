@@ -1,7 +1,4 @@
 
-
-    <body>
-
         <div id="home-page">
             
             <!-- header start -->
