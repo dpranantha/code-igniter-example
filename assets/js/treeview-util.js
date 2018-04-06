@@ -5,19 +5,39 @@
 // use for autochecked
 
 function autoChecked(node, tree) {
-    var childrenNodes = _.map(_getChildren(node), 'nodeId');
-    var allNodes = childrenNodes.concat(_.map(_getParentsNeedToBeAutoChecked(node, $(tree)), 'nodeId'));                
+    var childrenNodes = _getChildren(node);
+    var parentNodes = _getParentsNeedToBeAutoChecked(node, $(tree));
+    var allNodes = childrenNodes.concat(parentNodes);      
     $(tree).treeview('checkNode', [allNodes, {silent: true}]);     
+    // bug in treeview
+    $(tree).treeview('checkNode', [_.map(allNodes, 'nodeId'), {silent: true}]);     
 }
 
 function autoUnchecked(node, tree) {
-    var childrenNodes = _.map(_getChildren(node), 'nodeId')
-    var parentNodes = _.map(_getParents(node, $(tree)), 'nodeId');
+    var childrenNodes = _getChildren(node);
+    var parentNodes = _getParents(node, $(tree));
     var allNodes = parentNodes.concat(childrenNodes);
-    $(tree).treeview('uncheckNode', [allNodes, {silent: true}]);            
+    $(tree).treeview('uncheckNode', [allNodes, {silent: true}]);
+    // bug in treeview
+    $(tree).treeview('uncheckNode', [_.map(allNodes, 'nodeId'), {silent: true}]);
 }
 
 // library
+function _getAllCheckedLeafNodesFromRoot(node) {
+    return _.chain(_getLeafChildren(node))
+    .filter(function(leaf) { return leaf.state.checked;})
+    .value();    
+}
+
+function _getLeafChildren(node) {
+    if (node.nodes === undefined) return [node];
+    var childrenNodes =[];
+    node.nodes.forEach(function(child) {  
+            childrenNodes = childrenNodes.concat(_getLeafChildren(child));            
+    });
+    return childrenNodes;
+}
+
 function _getChildren(node) {
     if (node.nodes === undefined) return [];
     var childrenNodes = node.nodes;
@@ -32,6 +52,14 @@ function _getSiblings(node, tree) {
     var siblings = $(tree).treeview('getSiblings', node);
     if (siblings == undefined) return [];        
     return siblings;
+}
+function _getRoot(node, tree) {
+    if (node === undefined) return null;
+    var currNode = node; 
+    while (currNode.parentId !== undefined) {
+        currNode = $(tree).treeview('getParent', currNode);            
+    }
+    return currNode;
 }
 
 function _getDirectParent(node, tree) {

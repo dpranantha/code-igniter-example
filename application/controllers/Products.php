@@ -19,9 +19,9 @@ class Products extends CI_Controller {
             //get category tree
             $category_tree = $this->category_model->get_category_tree();
             foreach($category_tree as $row){
-                $tree[$row['child_name']] = $row['parent_name'];
+                $tree[$row['child_name']] = array($row['parent_name'], $row['id']);
             }        
-            $data['tree'] = json_encode(parseTree($tree));
+            $data['tree'] = json_encode(parseTree($tree, array(), NULL));
             
             //retrieve all products 
             $data['products'] = $this->product_model->find_products_by_category_id();
@@ -29,6 +29,7 @@ class Products extends CI_Controller {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu', $data);    
             $data['sidemenu'] = $this->load->view('templates/sidemenu', $data, TRUE);
+            $data['productlist'] = $this->load->view('pages/product_list', $data, TRUE);
             $this->load->view('pages/products', $data);
             $this->load->view('templates/footer');
         }   
@@ -42,19 +43,43 @@ class Products extends CI_Controller {
             }
 
             $data['title'] = $category['name']." Products";
-
+            
+            //all selected nodes
+            $sub_tree = $this->category_model->get_sub_category_tree($id);
+            $nodes = array($id);
+            foreach($sub_tree as $node) {
+                $nodes[] = $node['id'];
+            }
+        
             //get category tree
             $category_tree = $this->category_model->get_category_tree();
             foreach($category_tree as $row){
-                $tree[$row['child_name']] = $row['parent_name'];
+                $tree[$row['child_name']] = array($row['parent_name'], $row['id']);
             }        
-            $data['tree'] = json_encode(parseTree($tree));
+            $data['tree'] = json_encode(parseTree($tree, $nodes));
+
+            //get all products            
+            $data['products'] = $this->product_model->find_products_by_category_id($nodes);
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu', $data);
             $data['sidemenu'] = $this->load->view('templates/sidemenu', $data, TRUE);
+            $data['productlist'] = $this->load->view('pages/product_list', $data, TRUE);
             $this->load->view('pages/products', $data);
             $this->load->view('templates/footer');
+        }
+
+        public function filter($filterStr = NULL)
+        {
+            if ($filterStr === NULL || strlen($filterStr) === 0) {
+                $data['products'] = [];        
+            } else {
+                //prevent sql injection by sanitizing in model
+                $filters = explode('~', $filterStr);                
+                $data['products'] = $this->product_model->find_products_by_category_id($filters);
+            }
+            $data['productlist'] = $this->load->view('pages/product_list', $data, TRUE);
+            echo $data['productlist'];            
         }
 
 }

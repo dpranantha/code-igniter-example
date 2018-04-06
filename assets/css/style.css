@@ -781,34 +781,34 @@ section {
     margin-bottom: 0px;
 }
 
-/*---------------------------  portfolio  ----------------------------------*/
+/*---------------------------  product  ----------------------------------*/
 
-.portfolio-item {
+.product-item {
 	margin-bottom: 3.1269em;
 }
 
-.portfolio-item .item-image {
+.product-item .item-image {
 	position: relative;
 }
 
-.portfolio-item .item-image a,
-.portfolio-item .item-image a img {
+.product-item .item-image a,
+.product-item .item-image a img {
 	display: block;
 	position: relative;
 }
 
-.portfolio-item .item-image a {
+.product-item .item-image a {
 	overflow: hidden;
 }
 
-.portfolio-item .item-image a div {
+.product-item .item-image a div {
 	position: absolute;
 	background: rgba(75,75,75,0.7);
 	width: 100%;
 	height: 100%;
 }
 
-.portfolio-item .item-image a div span {
+.product-item .item-image a div span {
 	color: #ffffff;
 	display: block;
 	font-size: 50px;
@@ -817,28 +817,28 @@ section {
 	top: 35%;
 }
 
-.portfolio-item .item-description {
+.product-item .item-description {
     padding: 15px 0px;
 }
 
-.portfolio-item .item-description span {
+.product-item .item-description span {
     display: block;
     color: #969595;
 }
 
-.portfolio-item .item-description span.item-name {
+.product-item .item-description span.item-name {
     margin-bottom: 2px;
     font-size: 16px;
     color: #474747;
 }
 
-.portfolio-item .item-description span.like {
+.product-item .item-description span.like {
     float: right;
     margin-top: 12px;
 }
 
 @media (max-width: 767px) {
-	.portfolio-item .item-description {
+	.product-item .item-description {
 	    padding: 12px 50px;
 	}
 }

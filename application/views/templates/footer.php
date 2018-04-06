@@ -71,7 +71,7 @@
         <script type="text/javascript">
             $(function() {
 
-                $('.portfolio-item > .item-image').each( function() { $(this).hoverdir({
+                $('.product-item > .item-image').each( function() { $(this).hoverdir({
                     hoverDelay : 75
                 }); } );
 

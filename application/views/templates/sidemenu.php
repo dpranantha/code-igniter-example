@@ -68,11 +68,20 @@ var sidemenu = $('#default-tree').treeview({
         multiSelect: false,
 
         onNodeChecked: function(event, node) {                
-                autoChecked(node, $(this));      
+                autoChecked(node, $(this));   
+                var root = _getRoot(node, $(this));
+                var checkedLeafNodes = _.map(_getAllCheckedLeafNodesFromRoot(root), 'id').join("~");                 
+                var url = "<?php echo site_url('products/filter/');?>"+checkedLeafNodes;        
+                $("#product_list").load(url);                
         },
         
         onNodeUnchecked: function (event, node) {
                 autoUnchecked(node, $(this));    
+                var root = _getRoot(node, $(this));
+                var checkedLeafNodes = _.map(_getAllCheckedLeafNodesFromRoot(root), 'id').join("~");  
+                var url = "<?php echo site_url('products/filter/');?>"+checkedLeafNodes;       
+                $("#product_list").load(url);                
         }
 });
+
 </script>
