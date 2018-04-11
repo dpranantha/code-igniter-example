@@ -3,34 +3,69 @@
         <h3 class="text-capitalize">Products</h3>                                
     </div>             
     
-    <?php foreach($products as $product) { ?>
+<?php foreach($products as $product) { ?>
     <div class="row">
         <div class="product-item" >
             <div class="col-md-6 item-image">
                 <a href="#">
                     <img src="<?php echo base_url($product['url']);?>" class="img-responsive center-block">                                                 
                     <div><span><i class="fa fa-arrow-circle-right"></i></span></div>                   
-                </a>
-            </div>                                    
-        </div>
-        <div class="col-md-6">
-            <p><?=$product['name_en']?></p>
-        </div>                                    
+                </a>                
+            </div>    
+            <div class="col-md-6">
+                <div class="item-description">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span class="item-name">
+                                <?=$product['product_code']?><br/>
+                                <?=$product['name_en']?><br/>
+                                <? if ($product['name_nl'] != NULL) { 
+                                    echo $product['name_nl']."</br>";
+                                } ?>
+                                <? if ($product['name_cn'] != NULL) { 
+                                    echo $product['name_cn']."</br>";
+                                } ?>
+                            </span>
+                        </div>
+                    </div>
+                </div> <!-- end of /.item-description -->
+            </div>                                                        
+        </div>                
     </div>
 
-    <? } ?>
+    <br/>
+<? } ?>
+
     <div class="single-blog-page-button">    
         <div class="row">
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
                 <a href="#" class="btn blog-btn">
-                    <span><i class="fa fa-long-arrow-left"></i></span>                                                
+                    <span><i class="fa fa-long-arrow-left"></i></span>                                                   
                 </a>
+            </div> -->
+            <div id="pagination" class="col-md-12 text-center">
+                <?php echo $pagination; ?>
+                <script>
+                    $(function(){
+                        $("#pagination a").click(function(){
+                            $.ajax({
+                                type: "GET",
+                                url: $(this).attr("href"),
+                                success: function(res){
+                                        console.log(res);
+                                        $("#product_list").html(res);
+                                    }
+                            });
+                        return false;
+                        });
+                    });
+                </script>
             </div>
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
                 <a href="#" class="btn blog-btn">
                     <span><i class="fa fa-long-arrow-right"></i></span>
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
  

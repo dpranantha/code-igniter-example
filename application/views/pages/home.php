@@ -9,7 +9,7 @@
 
                         <div class="welcome-speech">
                             <h1>Mi Le International B.V.</h1>
-                            <p>Vegetarian and Vegan Foods</p>
+                            <p>The Vegetarian/ Vegan way of life</p>
                         </div><!-- /.intro -->
                         
                     </div><!-- /.container -->

@@ -39,10 +39,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>products</span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="<?php echo site_url('products/2'); ?>">Frozen</a>
+                            <a href="<?php echo site_url('products/category/2'); ?>">Frozen</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('products/5'); ?>">Dry</a>
+                            <a href="<?php echo site_url('products/category/5'); ?>">Dry</a>
                         </li>
                         <li>
                             <a href="<?php echo site_url('products'); ?>">All</a>
