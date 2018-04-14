@@ -9,7 +9,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/treeview-util.js"></script>
 
  <!-- begin sidemenu -->
- <aside class="col-md-3 col-md-pull-9">                
+ <aside class="col-md-3 col-md-pull-9">                                 
         <div class="collapse navbar-collapse">
                 <h4>Categories</h4>
                 <div id="default-tree"></div>                             

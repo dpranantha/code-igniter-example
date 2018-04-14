@@ -1,4 +1,4 @@
-<article class="blog-item">
+<article class="blog-item" id="product_list">
     <div class="blog-heading">
         <h3 class="text-capitalize">Products</h3>                                
     </div>             
@@ -15,15 +15,26 @@
             <div class="col-md-6">
                 <div class="item-description">
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
                             <span class="item-name">
-                                <?=$product['product_code']?><br/>
-                                <?=$product['name_en']?><br/>
-                                <? if ($product['name_nl'] != NULL) { 
+                                <?php echo $product['product_code']?>&nbsp;<?=$product['name_en']?><br/>
+                            </span>    
+                            <span class="item-name hidden-xs">
+                                <?php if ($product['name_nl'] != NULL) { 
                                     echo $product['name_nl']."</br>";
                                 } ?>
-                                <? if ($product['name_cn'] != NULL) { 
+                                <?php if ($product['name_cn'] != NULL) { 
                                     echo $product['name_cn']."</br>";
+                                } ?>
+                                <?php if ($product['n_piece'] != NULL) { 
+                                    echo $product['n_piece']." packs/case</br>";
+                                } ?>
+                                <?php if ($product['weight_gr'] != NULL) { 
+                                    if ($product['weight_gr'] >= 1000) {
+                                        echo ($product['weight_gr']/1000)."kg &plusmn; 5%</br>";
+                                    } else {
+                                        echo $product['weight_gr']."g &plusmn; 5%</br>";
+                                    }
                                 } ?>
                             </span>
                         </div>
@@ -34,7 +45,7 @@
     </div>
 
     <br/>
-<? } ?>
+<?php } ?>
 
     <div class="single-blog-page-button">    
         <div class="row">
@@ -52,7 +63,6 @@
                                 type: "GET",
                                 url: $(this).attr("href"),
                                 success: function(res){
-                                        console.log(res);
                                         $("#product_list").html(res);
                                     }
                             });

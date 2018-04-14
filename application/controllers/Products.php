@@ -13,6 +13,7 @@ class Products extends CI_Controller {
             $this->load->library('pagination');
         }
 
+        // controller for all products page
         public function index($page_idx = NULL)
         {            
             //pagination settings
@@ -62,11 +63,11 @@ class Products extends CI_Controller {
                 
                 $data['title'] = 'Products';            
 
-                // load header, menu, sidemenu    
+                // load header, menu sidemenu, searchbar
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/menu', $data);    
                 $data['sidemenu'] = $this->load->view('templates/sidemenu', $data, TRUE);
-                
+                $data['searchbar'] = $this->load->view('templates/search_interface', $data, TRUE);                
             }
 
             // load product list view
@@ -82,6 +83,7 @@ class Products extends CI_Controller {
             }
         }   
 
+        // controller for product in a category page
         public function view($id)
         {
             $category = $this->category_model->get_category_by_id($id);
@@ -144,11 +146,11 @@ class Products extends CI_Controller {
 
                 $data['title'] = "Products";
 
-                // load header, menu, sidemenu
+                // load header, menu, sidemenu, searchbar
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/menu', $data);
                 $data['sidemenu'] = $this->load->view('templates/sidemenu', $data, TRUE);
-                
+                $data['searchbar'] = $this->load->view('templates/search_interface', $data, TRUE);                
             }
 
             // load product list view
@@ -164,6 +166,8 @@ class Products extends CI_Controller {
             }
         }
 
+        // controller for filtering product using category tree filter
+        //use path param
         public function filter($filterStr = NULL)
         {            
             //retrieve all products 
@@ -213,5 +217,57 @@ class Products extends CI_Controller {
             $data['productlist'] = $this->load->view('pages/product_list', $data, TRUE);
             echo $data['productlist'];                
         }        
+
+        // controller for querying product in all categories
+        //Use tree info? NOT needed for now - since it searches in all categories
+        //use query param
+        public function search()
+        {
+            $searchStr = $this->input->get('data', TRUE);
+            if ($searchStr === NULL) {
+                return;
+            }
+
+            //pagination settings
+            $config['base_url'] = site_url('products/search/');            
+            $config['suffix'] = '?'.http_build_query(array('data' => $searchStr),'',"&amp;");
+            $config['total_rows'] = $this->product_model->count_products_by_search_term($searchStr);
+            $config['per_page'] = PRODUCTS_PER_PAGE;
+            $config["uri_segment"] = 3;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = floor($choice);
+    
+            //config for bootstrap pagination class integration
+            $config['full_tag_open'] = '<ul class="pagination">';
+            $config['full_tag_close'] = '</ul>';
+            $config['first_link'] = false;
+            $config['last_link'] = false;
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['prev_link'] = '&laquo';
+            $config['prev_tag_open'] = '<li class="prev">';
+            $config['prev_tag_close'] = '</li>';
+            $config['next_link'] = '&raquo';
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a href="#">';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+            $config['first_url'] = $config['base_url'].$config['suffix']; 
+        
+            $this->pagination->initialize($config);
+            $data['page'] = ($this->uri->segment($config["uri_segment"])) ? $this->uri->segment($config["uri_segment"]) : 0;                
+            $data['pagination'] = $this->pagination->create_links();
+
+            //retrieve all products 
+            $data['products'] = $this->product_model->find_products_by_search_term($config["per_page"], $data['page'], $searchStr);      
+            
+            //reload partial page: product list view
+            $data['productlist'] = $this->load->view('pages/product_list', $data, TRUE);
+            echo $data['productlist'];          
+        }
 }
 ?>

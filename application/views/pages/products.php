@@ -22,10 +22,11 @@
     <section class="blog-content">
         <div class="container">
             <div class="row">        
-                <main class="col-md-9 col-md-push-3" style="display: block;" id="product_list">                                          
-                    <?=$productlist;?>                        
+                <main class="col-md-9 col-md-push-3" style="display: block;">
+                    <?php echo $searchbar;?>
+                    <?php echo $productlist;?>
                 </main>    
-                <?=$sidemenu;?>
+                <?php echo $sidemenu;?>
             </div>
         </div>
     </section>           
