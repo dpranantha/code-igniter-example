@@ -670,6 +670,12 @@ section {
     overflow-x: hidden;
 }
 
+@media (min-width: 768px) { 
+  #header {
+    background-image: url(../img/milebv-large.png);
+  }
+}
+
 .header-wrapper .header-overlay {
     min-height: 100vh;
     /*min-width: 100vw;*/
@@ -839,7 +845,7 @@ section {
 
 @media (max-width: 767px) {
 	.product-item .item-description {
-	    padding: 12px 50px;
+	    padding: 12px 5px;
 	}
 }
 

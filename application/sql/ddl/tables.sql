@@ -9,13 +9,13 @@ CREATE TABLE product (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     product_code VARCHAR(10) NOT NULL,
     name_en VARCHAR(250) NOT NULL,
-    name_nl VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,    
+    name_de VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,    
     name_cn VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_general_ci,
     weight_gr INT NOT NULL,
     n_piece INT NOT NULL
 );
 
-CREATE FULLTEXT INDEX search_index ON product (product_code, name_nl, name_en);
+CREATE FULLTEXT INDEX search_index ON product (product_code, name_de, name_en);
 
 CREATE TABLE product_assets (   
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 

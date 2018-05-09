@@ -7,9 +7,10 @@ class Product_model extends CI_Model {
     }
 
     public function find_products_by_category_id($limit, $start, $c_id = NULL) {
-        $this->db->select('p.id, pc.c_id, p.product_code, p.name_nl, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url')
+        $this->db->select('p.id, pc.c_id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url')
         ->from('category AS c, product_category AS pc,product AS p, product_assets AS ps')
         ->where('c.id = pc.c_id AND pc.p_id = p.id AND ps.p_id = p.id')
+        ->order_by('p.product_code')
         ->limit($limit, $start)
         ->group_by('p.id');
         
@@ -41,9 +42,10 @@ class Product_model extends CI_Model {
     }
 
     public function find_products_by_search_term($limit, $start, $search_term = NULL) {
-        $this->db->select('p.id, pc.c_id, p.product_code, p.name_nl, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url')
+        $this->db->select('p.id, pc.c_id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url')
         ->from('category AS c, product_category AS pc,product AS p, product_assets AS ps')
         ->where('c.id = pc.c_id AND pc.p_id = p.id AND ps.p_id = p.id')
+        ->order_by('p.product_code')
         ->limit($limit, $start)
         ->group_by('p.id');
         
@@ -52,7 +54,7 @@ class Product_model extends CI_Model {
             return $query->result_array();
         }
         $st = $this->db->escape_str($search_term);
-        $query = $this->db->where("(p.name_en like '%".$st."%' or p.name_nl like '%".$st."%' or p.name_cn like '%".$st."%')")->get();
+        $query = $this->db->where("(p.name_en like '%".$st."%' or p.name_de like '%".$st."%' or p.name_cn like '%".$st."%')")->get();
         return $query->result_array();
     }
 
@@ -64,7 +66,7 @@ class Product_model extends CI_Model {
         $query = $this->db->select('count(id) as nbrows')
         ->from('product')
         ->like('name_en', $search_term)
-        ->or_like('name_nl', $search_term)
+        ->or_like('name_de', $search_term)
         ->or_like('name_cn', $search_term)
         ->get();        
         
@@ -73,5 +75,24 @@ class Product_model extends CI_Model {
             return 1;
         }
         return $result['nbrows'];
+    }
+
+    public function get_product($product_id) {
+        $query = $this->db->select('p.id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece')
+        ->from('product AS p, product_assets AS ps')
+        ->where('ps.p_id = p.id AND p.id = '.$this->db->escape($product_id))
+        ->get();
+
+        return $query->row_array();
+    }
+
+    public function get_product_assets($product_id) {
+        $query = $this->db->select('ps.url')
+        ->from('product_assets AS ps')
+        ->where('ps.p_id = '.$this->db->escape($product_id))
+        ->limit(4)
+        ->get();
+
+        return $query->result_array();
     }
 }

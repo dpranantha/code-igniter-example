@@ -29,6 +29,7 @@
                 <?php echo $sidemenu;?>
             </div>
         </div>
-    </section>           
+    </section>               
 </div>
+
 

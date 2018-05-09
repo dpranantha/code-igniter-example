@@ -16,9 +16,11 @@ class Products extends CI_Controller {
         // controller for all products page
         public function index($page_idx = NULL)
         {            
+            $nb_results = $this->product_model->count_products_by_category_id();
+
             //pagination settings
             $config['base_url'] = site_url('products/');
-            $config['total_rows'] = $this->product_model->count_products_by_category_id();
+            $config['total_rows'] = $nb_results;
             $config['per_page'] = PRODUCTS_PER_PAGE;
             $config["uri_segment"] = 2;
             $choice = $config["total_rows"] / $config["per_page"];
@@ -52,6 +54,7 @@ class Products extends CI_Controller {
             
             //retrieve all products 
             $data['products'] = $this->product_model->find_products_by_category_id($config["per_page"], $data['page']);
+            $data['nb_results'] = $nb_results;
 
             if ($last_uri_segment === NULL) {
                 //get category tree
@@ -99,9 +102,11 @@ class Products extends CI_Controller {
                 $nodes[] = $node['id'];
             }
             
+            $nb_results = $this->product_model->count_products_by_category_id($nodes);
+
             //pagination settings
             $config['base_url'] = site_url('products/category/'.$id.'/');
-            $config['total_rows'] = $this->product_model->count_products_by_category_id($nodes);            
+            $config['total_rows'] = $nb_results;       
             $config['per_page'] = PRODUCTS_PER_PAGE;
             $config["uri_segment"] = 4;
             $choice = $config["total_rows"] / $config["per_page"];
@@ -135,6 +140,7 @@ class Products extends CI_Controller {
             
             //retrieve all products 
             $data['products'] = $this->product_model->find_products_by_category_id($config["per_page"], $data['page'], $nodes);
+            $data['nb_results'] = $nb_results;
 
             if ($last_uri_segment === NULL) {
                 //get category tree
@@ -173,13 +179,15 @@ class Products extends CI_Controller {
             //retrieve all products 
             if ($filterStr === NULL || strlen($filterStr) === 0) {
                 $data['products'] = [];        
+                $data['nb_results'] = 0;
             } else {
                 //prevent sql injection by sanitizing in model
                 $filters = explode('~', $filterStr);                
+                $nb_results = $this->product_model->count_products_by_category_id($filters);
 
                 // pagination settings
                 $config['base_url'] = site_url('products/filter/'.$filterStr.'/');
-                $config['total_rows'] = $this->product_model->count_products_by_category_id($filters);
+                $config['total_rows'] = $nb_results;
                 $config['per_page'] = PRODUCTS_PER_PAGE;
                 $config["uri_segment"] = 4;
                 $choice = $config["total_rows"] / $config["per_page"];
@@ -210,7 +218,8 @@ class Products extends CI_Controller {
                 $data['pagination'] = $this->pagination->create_links();
 
                 //retrieve all products 
-                $data['products'] = $this->product_model->find_products_by_category_id($config["per_page"], $data['page'], $filters);                                
+                $data['products'] = $this->product_model->find_products_by_category_id($config["per_page"], $data['page'], $filters);  
+                $data['nb_results'] = $nb_results;                              
             }
 
             //reload partial page: product list view
@@ -227,11 +236,12 @@ class Products extends CI_Controller {
             if ($searchStr === NULL) {
                 return;
             }
+            $nb_results = $this->product_model->count_products_by_search_term($searchStr);
 
             //pagination settings
             $config['base_url'] = site_url('products/search/');            
             $config['suffix'] = '?'.http_build_query(array('data' => $searchStr),'',"&amp;");
-            $config['total_rows'] = $this->product_model->count_products_by_search_term($searchStr);
+            $config['total_rows'] = $nb_results;
             $config['per_page'] = PRODUCTS_PER_PAGE;
             $config["uri_segment"] = 3;
             $choice = $config["total_rows"] / $config["per_page"];
@@ -264,10 +274,75 @@ class Products extends CI_Controller {
 
             //retrieve all products 
             $data['products'] = $this->product_model->find_products_by_search_term($config["per_page"], $data['page'], $searchStr);      
-            
+            $data['nb_results'] = $nb_results;
+
             //reload partial page: product list view
             $data['productlist'] = $this->load->view('pages/product_list', $data, TRUE);
             echo $data['productlist'];          
+        }
+
+        public function ajax($page_idx)
+        {            
+           //retrieve all products 
+            $data['products'] = $this->product_model->find_products_by_category_id(PRODUCTS_PER_PAGE, $page_idx);
+            // load products loop view
+            $result = $this->load->view('pages/products_loop', $data);
+            echo json_encode($result);
+        }
+
+        public function cat_ajax($cat_id, $page_idx)
+        {            
+            $category = $this->category_model->get_category_by_id($cat_id);
+            if (empty($category)) {
+                    // redirect to all products
+                    redirect('products/index');
+            }
+                    
+            //all selected nodes to get the whole products
+            $sub_tree = $this->category_model->get_sub_category_tree($cat_id);
+            $nodes = array($cat_id);
+            foreach($sub_tree as $node) {
+                $nodes[] = $node['id'];
+            }
+            
+           //retrieve all products 
+            $data['products'] = $this->product_model->find_products_by_category_id(PRODUCTS_PER_PAGE, $page_idx, $nodes);
+            // load products loop view
+            $result = $this->load->view('pages/products_loop', $data);
+            echo json_encode($result);
+        }
+
+        public function search_ajax($page_idx)
+        {            
+            $searchStr = $this->input->get('data', TRUE);
+            if ($searchStr === NULL) {
+                return;
+            }
+           //retrieve all products 
+            $data['products'] = $this->product_model->find_products_by_search_term(PRODUCTS_PER_PAGE, $page_idx, $searchStr);
+            // load products loop view
+            $result = $this->load->view('pages/products_loop', $data);
+            echo json_encode($result);
+        }
+
+        public function product($product_id)
+        {
+            if ($product_id === NULL) {
+                return;
+            }
+        
+            //retrieve product information
+            $data['product'] = $this->product_model->get_product($product_id);      
+            $data['assets'] = $this->product_model->get_product_assets($product_id);
+            $data['slides'] = $this->load->view('templates/slideshow', $data, TRUE);
+            $data['a_product'] = $this->load->view('pages/a_product', $data, TRUE);                          
+            $data['side_landing_product'] = $this->load->view('templates/side_landing_product', $data, TRUE);
+
+            // load header, menu 
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/menu', $data);
+            $this->load->view('pages/landing_product', $data);                    
+            $this->load->view('templates/footer'); 
         }
 }
 ?>

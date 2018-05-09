@@ -42,7 +42,7 @@
                             <a href="<?php echo site_url('products/category/2'); ?>">Frozen</a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('products/category/5'); ?>">Dry</a>
+                            <a href="<?php echo site_url('products/category/6'); ?>">Dry</a>
                         </li>
                         <li>
                             <a href="<?php echo site_url('products'); ?>">All</a>
