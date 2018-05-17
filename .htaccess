@@ -1,0 +1,13 @@
+Options +FollowSymlinks 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^http://www.ai-int.eu/ [NC]
+RewriteRule ^(.*)$ http://milebv.eu/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^http://ai-int.eu/ [NC]
+RewriteRule ^(.*)$ http://milebv.eu/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www.ai-int.eu [NC]
+RewriteRule ^(.*)$ http://milebv.eu/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^ai-int.eu [NC]
+RewriteRule ^(.*)$ http://milebv.eu/$1 [L,R=301]
