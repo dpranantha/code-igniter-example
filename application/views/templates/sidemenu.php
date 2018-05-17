@@ -67,7 +67,9 @@ var sidemenu = $('#default-tree').treeview({
         // enables multi select, we use check
         multiSelect: false,
 
-        onNodeChecked: function(event, node) {                
+        onNodeChecked: function(event, node) {          
+                $("#usersSearch").val('');
+                $("#searchClear").toggleClass('hidden', true);
                 autoChecked(node, $(this));   
                 var root = _getRoot(node, $(this));
                 var checkedLeafNodes = _.map(_getAllCheckedLeafNodesFromRoot(root), 'id').join("~");                 
@@ -76,6 +78,8 @@ var sidemenu = $('#default-tree').treeview({
         },
         
         onNodeUnchecked: function (event, node) {
+                $("#usersSearch").val('');
+                $("#searchClear").toggleClass('hidden', true);
                 autoUnchecked(node, $(this));    
                 var root = _getRoot(node, $(this));
                 var checkedLeafNodes = _.map(_getAllCheckedLeafNodesFromRoot(root), 'id').join("~");  

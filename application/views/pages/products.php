@@ -26,7 +26,9 @@
                     <?php echo $searchbar;?>
                     <?php echo $productlist;?>
                 </main>    
-                <?php echo $sidemenu;?>
+                <div id="sidemenu">
+                    <?php echo $sidemenu;?>
+                </div>
             </div>
         </div>
     </section>               

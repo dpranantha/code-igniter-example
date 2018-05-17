@@ -281,6 +281,18 @@ class Products extends CI_Controller {
             echo $data['productlist'];          
         }
 
+        public function resettree()
+        {  
+            //get category tree
+            $category_tree = $this->category_model->get_category_tree();
+            foreach($category_tree as $row){
+                $tree[$row['child_name']] = array($row['parent_name'], $row['id']);
+            }        
+            $data['tree'] = json_encode(parseTree($tree, array(), NULL));
+            $data['sidemenu'] = $this->load->view('templates/sidemenu', $data, TRUE);
+            echo $data['sidemenu'];
+        }
+
         public function ajax($page_idx)
         {            
            //retrieve all products 

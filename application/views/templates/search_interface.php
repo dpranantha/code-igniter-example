@@ -24,6 +24,9 @@
             if (searchTerm.trim() != '') {
                 $.get("<?php echo site_url('products/search/');?>", {data: searchTerm},function(response){                
                     $("#product_list").html(response);      
+                });                
+                $.get("<?php echo site_url('products/resettree');?>", {},function(tree){                
+                    $("#sidemenu").html(tree);    
                 });
             } else {
                 resetSearchText();
