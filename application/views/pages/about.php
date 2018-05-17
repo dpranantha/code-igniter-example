@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <ol class="breadcrumb">
                             <li><a href="<?php echo site_url('pages/view/home'); ?>">home</a></li>
-                            <li class="active">contact us</li>
+                            <li class="active">about us</li>
                         </ol> <!-- end of /.breadcrumb -->
 
                     </div>
