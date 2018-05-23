@@ -301,3 +301,19 @@ set url = 'assets/img/products/CK03.jpg'
 where p_id in (select id 
                 from product 
                 where product_code = 'CK-03');                
+
+update product_assets
+set url = 'assets/img/products/AJ06.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'AJ-06');
+update product_assets
+set url = 'assets/img/products/HS01M.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'HS-01M');
+update product_assets
+set url = 'assets/img/products/HS18M.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'HS-18M');
