@@ -317,3 +317,34 @@ set url = 'assets/img/products/HS18M.jpg'
 where p_id in (select id 
                 from product 
                 where product_code = 'HS-18M');
+
+update product_assets
+set url = 'assets/img/products/CH02.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CH-02');
+update product_assets
+set url = 'assets/img/products/CH03.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CH-03');
+update product_assets
+set url = 'assets/img/products/CH04.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CH-04');
+update product_assets
+set url = 'assets/img/products/CW12.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CW-12');
+update product_assets
+set url = 'assets/img/products/CW13.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CW-13');
+update product_assets
+set url = 'assets/img/products/YS02.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'YS-02');
