@@ -33,7 +33,14 @@
                                     } else {
                                         echo $product['weight_gr']."g &plusmn; 5%</br>";
                                     }
-                                } ?>
+                                }
+                                if ($product['n_piece2'] != NULL && $product['n_piece2'] > 0) { 
+                                    echo "(L) ".$product['n_piece2']." large pack</br>";
+                                }
+                                if ($product['weight_gr2'] != NULL && $product['weight_gr2'] > 0) {                                     
+                                    echo "(L) ".($product['weight_gr2']/1000)."kg &plusmn; 5%</br>";                                    
+                                }
+                                ?>
                             </span>
                         </div>
                     </div>

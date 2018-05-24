@@ -33,6 +33,10 @@
                     <h6 class="text-capitalize">Product name (CN): <?php echo $name_cn;?></h6>
                     <h6 class="text-capitalize">Product weight: <?php echo $weight_gr;?></h6>
                     <h6 class="text-capitalize">Product pieces: <?php echo $pieces;?></h6>
+                    <?php if ($product['weight_gr2'] != NULL && $product['weight_gr2'] > 0) { ?>
+                        <h6 class="text-capitalize">Product weight (L): <?php echo ($product['weight_gr2']/1000).'kg &plusmn; 5%';?></h6>
+                        <h6 class="text-capitalize">Product pieces (L): <?php echo $product['n_piece2'].' large pack';?></h6>
+                    <?php }?>
                 </div>
             </div>
             <div class="tab-pane" id="product-detail">

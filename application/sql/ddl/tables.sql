@@ -34,3 +34,6 @@ CREATE TABLE product_category (
 ALTER TABLE product_category ADD UNIQUE product_id_cat_id (c_id, p_id);
 
 alter table product add cooking varchar(500);
+
+alter table product add weight_gr2 INT;
+alter table product add n_piece2 INT;

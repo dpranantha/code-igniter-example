@@ -7,7 +7,7 @@ class Product_model extends CI_Model {
     }
 
     public function find_products_by_category_id($limit, $start, $c_id = NULL) {
-        $this->db->select('p.id, pc.c_id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url')
+        $this->db->select('p.id, pc.c_id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url, p.weight_gr2, p.n_piece2')
         ->from('category AS c, product_category AS pc,product AS p, product_assets AS ps')
         ->where('c.id = pc.c_id AND pc.p_id = p.id AND ps.p_id = p.id')
         ->order_by('p.product_code')
@@ -78,7 +78,7 @@ class Product_model extends CI_Model {
     }
 
     public function get_product($product_id) {
-        $query = $this->db->select('p.id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, p.cooking')
+        $query = $this->db->select('p.id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, p.cooking, p.weight_gr2, p.n_piece2')
         ->from('product AS p, product_assets AS ps')
         ->where('ps.p_id = p.id AND p.id = '.$this->db->escape($product_id))
         ->get();

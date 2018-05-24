@@ -453,3 +453,7 @@ set url = 'assets/img/products/JC35.jpg'
 where p_id in (select id 
                 from product 
                 where product_code = 'JC-36G');
+
+update product
+set n_piece=15, weight_gr=300, n_piece2=1, weight_gr2=5000
+where product_code like 'D00%';
