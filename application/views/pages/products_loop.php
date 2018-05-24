@@ -43,3 +43,22 @@
     </div>
     <br/>
 <?php } ?>
+
+<!-- script for portfolio section using hoverdirection -->
+<script type="text/javascript">
+    $(function() {
+        $('.product-item > .item-image').each( function() { 
+            $(this).hoverdir({
+                hoverDelay : 75
+            }); 
+        });
+    });
+
+    // $(function() {
+    //     $('.product-item > .item-image').each( function() { 
+    //         $(this).bind('touchstart touchend', function(e) {
+    //             $(this).toggleClass('hover_effect');
+    //         });
+    //     });
+    // });
+</script>
