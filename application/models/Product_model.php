@@ -78,7 +78,7 @@ class Product_model extends CI_Model {
     }
 
     public function get_product($product_id) {
-        $query = $this->db->select('p.id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece')
+        $query = $this->db->select('p.id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, p.cooking')
         ->from('product AS p, product_assets AS ps')
         ->where('ps.p_id = p.id AND p.id = '.$this->db->escape($product_id))
         ->get();

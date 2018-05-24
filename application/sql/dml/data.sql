@@ -348,3 +348,108 @@ set url = 'assets/img/products/YS02.jpg'
 where p_id in (select id 
                 from product 
                 where product_code = 'YS-02');
+
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='AJ01';
+update product set cooking='Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='AJ02';
+update product set cooking='Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='AJ03';
+update product set cooking='Consume directly with sushi, bread, or rice.' where replace(product_code,'-','')='AJ06';
+update product set cooking='Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='AJ07';
+update product set cooking='Consume directly as snack.' where replace(product_code,'-','')='AZ05';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CH01';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CH02';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CH03';
+update product set cooking='Deep fry and serve.' where replace(product_code,'-','')='CH04';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CH05';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CH06';
+update product set cooking='Defrost, pan fry with oil and serve.' where replace(product_code,'-','')='CK03';
+update product set cooking='Deep fry and serve.' where replace(product_code,'-','')='CK05';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CK06-V';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CW02';
+update product set cooking='Defrost, pan fry with oil and serve with bread.' where replace(product_code,'-','')='CW03';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CW07';
+update product set cooking='Defrost, grill or pan fry with oil and serve.' where replace(product_code,'-','')='CW08';
+update product set cooking='Deep fry and serve.' where replace(product_code,'-','')='CW09';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CW11';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='CW12';
+update product set cooking='Soak in hot water for at least 5 minutes, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='D001';
+update product set cooking='Soak in hot water for at least 5 minutes, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='D002';
+update product set cooking='Soak in hot water for at least 5 minutes, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='D003';
+update product set cooking='Soak in hot water for at least 5 minutes, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='D004';
+update product set cooking='Soak in hot water for at least 5 minutes, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='D005';
+update product set cooking='Soak in hot water for at least 5 minutes, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='D008';
+update product set cooking='Consume directly with sushi, bread, or rice.' where replace(product_code,'-','')='D099';
+update product set cooking='1. Add desired amount to noodles or rice, stir and serve.  Or 2. Cook with vegetables and serve.' where replace(product_code,'-','')='D121';
+update product set cooking='Cook with vegetables and serve.' where replace(product_code,'-','')='D126';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='ED06';
+update product set cooking='1. Defrost, cut into desired slices, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.  Or 2. Defrost, cut into desired slices, pan fry with oil, serve with noodle soup.' where replace(product_code,'-','')='FC01';
+update product set cooking='Defrost, cut into desired chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve. ' where replace(product_code,'-','')='FC06';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='GS03';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='HS01';
+update product set cooking='Defrost, remove plastic wrap, grill or pan fry with oil and serve.' where replace(product_code,'-','')='HS04';
+update product set cooking='Defrost, remove plastic wrap, grill or pan fry with oil and serve.' where replace(product_code,'-','')='HS10';
+update product set cooking='1. Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.  Or 2. Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='HS11';
+update product set cooking='1. Defrost, pan fry with oil, cook and serve.' where replace(product_code,'-','')='HS16';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='HS18';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='HY04';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='JC36';
+update product set cooking='' where replace(product_code,'-','')='JW08';
+update product set cooking='Consumed with sandwiches, salades, or toppings for pizza.' where replace(product_code,'-','')='K025';
+update product set cooking='Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='KC02';
+update product set cooking='1. Deep fry and serve.  Or 2. Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='KC10';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='KC21';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='KC23';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='KC29';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='SD01';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='SS06';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='SW01';
+update product set cooking='Defrost, grill or pan fry with oil and serve.' where replace(product_code,'-','')='SW02';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC01';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC02';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC03';
+update product set cooking='Deep fry and serve.' where replace(product_code,'-','')='TC04';
+update product set cooking='Defrost, cut into desired slices or chunks, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC06';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC10';
+update product set cooking='Boil water, add entire contents, add vegetables, cook and serve.' where replace(product_code,'-','')='TC13';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC14';
+update product set cooking='Defrost, used as fillings for wontons or dumplings.' where replace(product_code,'-','')='TC16';
+update product set cooking='Defrost, used as fillings for wontons or dumplings.' where replace(product_code,'-','')='TC17';
+update product set cooking='Defrost, used as fillings for wontons or dumplings.' where replace(product_code,'-','')='TC18';
+update product set cooking='Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='TC20';
+update product set cooking='Defrost, cut into thin slices, cook with vegetables and serve.' where replace(product_code,'-','')='TC21';
+update product set cooking='Deep fry or braise and serve.' where replace(product_code,'-','')='TC23';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC24';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC26';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC27';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TC29';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TY01';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='TY02';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL01';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL02';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL03';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL08';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL09';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL14';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WL21';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='WS01';
+update product set cooking='Deep fry and serve.' where replace(product_code,'-','')='YH01';
+update product set cooking='Boil water, add desired amount, add vegetables, cook and serve. Ideal for soups.' where replace(product_code,'-','')='YH02';
+update product set cooking='Defrost, pan fry with oil and serve.' where replace(product_code,'-','')='YH04';
+update product set cooking='Defrost, pan fry with oil, mix with vegetables, add desired sauce(s), cook and serve.' where replace(product_code,'-','')='YH08';
+update product set cooking='Defrost, pan fry with oil and serve with bread.' where replace(product_code,'-','')='YH09';
+update product set cooking='Deep fry and serve.' where replace(product_code,'-','')='YS02';
+
+update product_assets
+set url = 'assets/img/products/JC35.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CH-05');
+update product_assets
+set url = 'assets/img/products/JC35.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'CH-05');
+update product_assets
+set url = 'assets/img/products/JC35.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'JC-36G');

@@ -26,8 +26,8 @@
                     <?php 
                         $name_de = ($product['name_de'] != NULL) ? $product['name_de'] : 'N/A';
                         $name_cn = ($product['name_cn'] != NULL) ? $product['name_cn'] : 'N/A';
-                        $weight_gr = ($product['weight_gr'] != NULL) ? ($product['weight_gr'] >= 1000 ? ($product['weight_gr']/1000).'kg ' : $product['weight_gr'].'g ').'&plusmn; 5%' : 'N/A';
-                        $pieces = ($product['n_piece'] != NULL) ? $product['n_piece'].' packs/case' : 'N/A';
+                        $weight_gr = ($product['weight_gr'] != NULL && $product['weight_gr'] > 0) ? ($product['weight_gr'] >= 1000 ? ($product['weight_gr']/1000).'kg ' : $product['weight_gr'].'g ').'&plusmn; 5%' : 'N/A';
+                        $pieces = ($product['n_piece'] != NULL && $product['n_piece'] > 0) ? $product['n_piece'].' packs/case' : 'N/A';
                     ?>
                     <h6 class="text-capitalize">Product name (DE): <?php echo $name_de;?></h6>
                     <h6 class="text-capitalize">Product name (CN): <?php echo $name_cn;?></h6>
@@ -39,7 +39,7 @@
                 <div>
                     <h6 class="text-capitalize">Ingredients: N/A</h6>
                     <h6 class="text-capitalize">Cooking recommendation:</h6>
-                    <p>N/A</p>
+                    <p><?php echo $product['cooking']?></p>
                 </div>                                    
             </div>
         </div>

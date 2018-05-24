@@ -24,10 +24,10 @@
                                 if ($product['name_cn'] != NULL) { 
                                     echo $product['name_cn']."</br>";
                                 } 
-                                if ($product['n_piece'] != NULL) { 
+                                if ($product['n_piece'] != NULL && $product['n_piece'] > 0) { 
                                     echo $product['n_piece']." packs/case</br>";
                                 } 
-                                if ($product['weight_gr'] != NULL) { 
+                                if ($product['weight_gr'] != NULL && $product['weight_gr'] > 0) { 
                                     if ($product['weight_gr'] >= 1000) {
                                         echo ($product['weight_gr']/1000)."kg &plusmn; 5%</br>";
                                     } else {
