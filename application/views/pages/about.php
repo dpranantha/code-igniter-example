@@ -32,10 +32,16 @@
         <div class="container">
             <article class="blog-item" id="about_us">
             <div class="blog-heading">
-                <h3 class="text-capitalize">Story of us</h3>
+                <h3 class="text-capitalize">About us</h3>
             </div>          
-                <p>Mile International B.V. is a Dutch company specialized in selling vegetarion/vegan products.
-                </p>
+                <p>We are committed to building a better working world by providing society vegan and vegetarian food varieties which ultimately promotes better healthy living style, better environment, and lesser animal suffering.</p> 
+                
+                <p>People often wonder "what do vegetarians eat? Salads? Tofu?" Well, we provide meat alternatives with rich texture, delicious delicacies, and high protein nutrient vegetarian and vegan foods. Currently, we produce and sell over 150 assortments of vegetarian and vegan products.</p>
+
+                <p>For over 22 years in this industry we are dedicated, we strive and continue to make a positive difference in society. The products we have to offer are all free from genetically modification and are all made without any preservatives. Our frozen technology allows us to preserve all the health and nutritional contents for consumption. All of the ingredients that we use are all vegetable based, and our primary choice of additives are natural.</p>
+
+                <p>Our team - all staffs and members are all vegetarian and all share the same ideology for the good of the environment, for health, and for animals.</p> 
+
             </article>    
         </div>    
     </section>
