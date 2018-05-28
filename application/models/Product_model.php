@@ -42,7 +42,7 @@ class Product_model extends CI_Model {
     }
 
     public function find_products_by_search_term($limit, $start, $search_term = NULL) {
-        $this->db->select('p.id, pc.c_id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url')
+        $this->db->select('p.id, pc.c_id, p.product_code, p.name_de, p.name_en, p.name_cn, p.weight_gr, p.n_piece, ps.url, p.weight_gr2, p.n_piece2')
         ->from('category AS c, product_category AS pc,product AS p, product_assets AS ps')
         ->where('c.id = pc.c_id AND pc.p_id = p.id AND ps.p_id = p.id')
         ->order_by('p.product_code')
