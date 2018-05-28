@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-treeview.min.css">
 
 <!-- JS for submenu  -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap-treeview.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/underscore.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/treeview-util.js"></script>
