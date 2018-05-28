@@ -1,3 +1,16 @@
+    
+    <title>Mi Le International - Products</title>
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset = "utf-8">
+    <meta name = "Description" CONTENT = "Products of Mi Le International B.V.">
+    <meta name = "robots" content = "index, follow">
+    
+</head>
+<body>
 <div id="single-blog-left-sidebar">
 
     <!-- header begin -->
@@ -33,5 +46,4 @@
         </div>
     </section>               
 </div>
-
 

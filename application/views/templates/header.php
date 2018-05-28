@@ -7,16 +7,6 @@
 <html class="no-js"> <!--<![endif]-->
     <head>
 
-        <title>Mi Le International - Home</title>
-
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta charset = "utf-8">
-        <meta name = "Description" CONTENT = "Mi Le International B.V., The Vegetarian/ Vegan way of life">
-        <meta name = "robots" content = "index, follow">
-        
         <!-- stylesheets -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
@@ -25,8 +15,10 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.theme.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 
-        <!-- scripts -->
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/modernizr.custom.97074.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/modernizr.custom.97074.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.hoverdir.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 
-    </head>
+                
+    

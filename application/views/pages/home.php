@@ -1,4 +1,13 @@
+    <title>Mi Le International - Home</title>
 
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset = "utf-8">
+    <meta name = "Description" CONTENT = "Mi Le International B.V., The Vegetarian/ Vegan way of life">
+    <meta name = "robots" content = "index, follow">
+</head>
         <div id="home-page">
             
             <!-- header start -->

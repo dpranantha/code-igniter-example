@@ -52,17 +52,14 @@
 <?php } ?>
 
 <!-- script for portfolio section using hoverdirection -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/modernizr.custom.97074.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.hoverdir.js"></script>
 <script type="text/javascript">
-    $(function() {
-        $('.product-item > .item-image').each( function() { 
-            $(this).hoverdir({
-                hoverDelay : 75
-            }); 
-        });
-    });
+    // $(function() {
+    //     $('.product-item > .item-image').each( function() { 
+    //         $(this).hoverdir({
+    //             hoverDelay : 75
+    //         }); 
+    //     });
+    // });
 
     // $(function() {
     //     $('.product-item > .item-image').each( function() { 

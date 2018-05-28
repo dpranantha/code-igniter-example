@@ -54,32 +54,7 @@
                 </div><!-- /.container -->
             </nav>
             <!-- footer-navigation end -->
-        </div> <!-- end of page -->
-
-
-        <!--  Necessary scripts  -->
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.mobile-events.min.js"></script> -->
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.hoverdir.js"></script>
-
-        <!-- script for portfolio section using hoverdirection -->
-        <script type="text/javascript">
-            $(function() {
-                $('.product-item > .item-image').each( function() { 
-                    $(this).hoverdir({
-                        hoverDelay : 75
-                    }); 
-                });
-            });
-
-            // $(function() {
-            //     $('.product-item > .item-image').each( function() { 
-            //         $(this).bind('touchstart touchend', function(e) {
-            //             $(this).toggleClass('hover_effect');
-            //         });
-            //     });
-            // });
-        </script>
+        </div> <!-- end of page -->       
 
     </body>
 </html>
