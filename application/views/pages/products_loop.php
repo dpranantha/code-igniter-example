@@ -49,9 +49,9 @@
         </div>                
     </div>
     <br/>    
-<?php } ?>
+<?php } 
 
-<!-- script for portfolio section using hoverdirection -->
+if (count($products) > 0) { ?>
 <script type="text/javascript">
     $(function() {
         $('.product-item > .item-image').each( function() {             
@@ -69,3 +69,5 @@
     //     });
     // });
 </script>
+
+<?php }?>

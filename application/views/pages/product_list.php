@@ -139,7 +139,7 @@
 	        })
 	        .done(function(data){
                 if(data == ""){                
-	                $('.ajax-load').html("<div class='row'><div>No more records found!</div></div>");
+	                $('.ajax-load').html("<div class='row'><div><b>No more records found!</b></div></div>");
 	                return;
                 }
                 $('.ajax-load').hide();
