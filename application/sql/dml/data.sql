@@ -457,3 +457,11 @@ where p_id in (select id
 update product
 set n_piece=15, weight_gr=300, n_piece2=1, weight_gr2=5000
 where product_code like 'D00%';
+
+--new product
+INSERT INTO product(product_code, name_cn, name_en, name_de, weight_gr, n_piece) values('SB01','三文魚生魚片','Vegan Salmon Sashimi','Veganer Lachs Sashimi',230,70);
+INSERT INTO product_assets(p_id, url) values (89,'assets/img/products/SB01.jpg');
+INSERT INTO product(product_code, name_cn, name_en, name_de, weight_gr, n_piece) values('SB02','金槍魚生魚片','Vegan Tuna Sashimi','Veganes Thunfisch Sashimi',230,70);
+INSERT INTO product_assets(p_id, url) values (90,'assets/img/products/SB01.jpg');
+INSERT INTO product_category values(4,89);
+INSERT INTO product_category values(4,90);
