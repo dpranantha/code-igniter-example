@@ -37,3 +37,5 @@ alter table product add cooking varchar(500);
 
 alter table product add weight_gr2 INT;
 alter table product add n_piece2 INT;
+
+alter table product add allergy_info VARCHAR(500);

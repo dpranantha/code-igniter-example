@@ -1,9 +1,9 @@
 -- Categories
-INSERT INTO category(name, parent_id) values('All', null);
-INSERT INTO category(name, parent_id) values('Frozen', 1);
-INSERT INTO category(name, parent_id) values('Meat', 2);
-INSERT INTO category(name, parent_id) values('Seafood', 2);
-INSERT INTO category(name, parent_id) values('Tofu, Mushroom, & Vegetables', 2);
+INSERT INTO category(name, parent_id) values('All', null);  -- 1
+INSERT INTO category(name, parent_id) values('Frozen', 1);  -- 2
+INSERT INTO category(name, parent_id) values('Meat', 2); --delete 3
+INSERT INTO category(name, parent_id) values('Seafood', 2); -- delete 4
+INSERT INTO category(name, parent_id) values('Tofu, Mushroom, & Vegetables', 2); --delete 5
 INSERT INTO category(name, parent_id) values('Dry', 1);
 
 -- Products
@@ -465,3 +465,104 @@ INSERT INTO product(product_code, name_cn, name_en, name_de, weight_gr, n_piece)
 INSERT INTO product_assets(p_id, url) values (90,'assets/img/products/SB01.jpg');
 INSERT INTO product_category values(4,89);
 INSERT INTO product_category values(4,90);
+
+
+UPDATE product_category SET c_id = 2 where c_id in (3, 4, 5);
+
+DELETE FROM category WHERE id in (3, 4, 5);
+
+UPDATE category SET name = 'Frozen foods' WHERE id = 2;
+UPDATE category SET name = 'Dry foods' WHERE id = 6;
+
+update product set cooking='Defrost and serve, ideal for sushi or serve with wasabi dip' WHERE product_code in ('SB01', 'SB02');
+
+update product set allergy_info='This product contains soy.' where product_code='AJ-01';
+update product set allergy_info='This product contains soy.' where product_code='AJ-02';
+update product set allergy_info='This product contains soy and wheat.' where product_code='AJ-03';
+update product set allergy_info='This product contains soy and wheat.' where product_code='AJ-06';
+update product set allergy_info='' where product_code='AJ-07';
+update product set allergy_info='This product contains soy.' where product_code='AJ-08';
+update product set allergy_info='This product contains soy, wheat  and celery.' where product_code='AJ-09';
+update product set allergy_info='This product contains soy.' where product_code='CH-01';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CH-02';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CH-03';
+update product set allergy_info='This product contains soy.' where product_code='CH-04';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CH-05';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CH-06';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CK-02';
+update product set allergy_info='This product contains soy.' where product_code='CK-03';
+update product set allergy_info='This product contains soy, wheat and sesame.' where product_code='CK-05';
+update product set allergy_info='This product contains soy.' where product_code='CK-06';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-02';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-03';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-07';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-08';
+update product set allergy_info='This product contains soy, wheat  and celery.' where product_code='CW-09';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-11';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-12';
+update product set allergy_info='This product contains soy and wheat.' where product_code='CW-13';
+update product set allergy_info='This product contains soy.' where product_code='FC-01';
+update product set allergy_info='This product contains soy.' where product_code='FC-06';
+update product set allergy_info='This product contains soy and wheat.' where product_code='GS-03';
+update product set allergy_info='This product contains soy and milk.' where product_code='HS-01M';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='HS-04M';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='HS-10M';
+update product set allergy_info='This product contains soy and milk.' where product_code='HS-11M';
+update product set allergy_info='This product contains soy and milk.' where product_code='HS-16M';
+update product set allergy_info='This product contains soy and milk.' where product_code='HS-18M';
+update product set allergy_info='' where product_code='HY-04';
+update product set allergy_info='This product contains soy.' where product_code='JC-36';
+update product set allergy_info='This product contains soy, wheat and sesame.' where product_code='KC-02';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='KC-10M';
+update product set allergy_info='This product contains soy.' where product_code='KC-21';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='KC-22M';
+update product set allergy_info='This product contains soy and wheat.' where product_code='KC-23';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='KC-23M';
+update product set allergy_info='This product contains soy and wheat.' where product_code='KC-29';
+update product set allergy_info='This product contains soy.' where product_code='KO-25';
+update product set allergy_info='This product contains soy and wheat.' where product_code='SD-01';
+update product set allergy_info='This product contains soy.' where product_code='SS-06';
+update product set allergy_info='This product contains soy.' where product_code='SW-01';
+update product set allergy_info='This product contains soy.' where product_code='SW-02';
+update product set allergy_info='This product contains soy.' where product_code='SW-03';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-01';
+update product set allergy_info='This product contains soy, wheat and sesame.' where product_code='TC-02';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-03';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-04';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-06';
+update product set allergy_info='This product contains soy.' where product_code='TC-10';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-13';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-14';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-16';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-17';
+update product set allergy_info='This product contains soy.' where product_code='TC-20';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-21';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-23';
+update product set allergy_info='This product contains soy, wheat and sesame.' where product_code='TC-24';
+update product set allergy_info='This product contains soy.' where product_code='TC-26';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-27';
+update product set allergy_info='This product contains soy and wheat.' where product_code='TC-29';
+update product set allergy_info='This product contains soy, wheat and sesame.' where product_code='TY-01';
+update product set allergy_info='This product contains soy, wheat and sesame.' where product_code='TY-02';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-01M';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-02M';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-03M';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-08M';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-09M';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-14M';
+update product set allergy_info='This product contains soy and milk.' where product_code='WL-21M';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='YH-01M';
+update product set allergy_info='This product contains soy and wheat.' where product_code='YH-02';
+update product set allergy_info='This product contains soy, wheat and milk.' where product_code='YH-04M';
+update product set allergy_info='This product contains soy and wheat.' where product_code='YH-08';
+update product set allergy_info='This product contains soy.' where product_code='YH-09';
+update product set allergy_info='This product contains soy and wheat.' where product_code='YS-02';
+update product set allergy_info='This product contains soy and wheat.' where product_code='D001';
+update product set allergy_info='This product contains soy and wheat.' where product_code='D002';
+update product set allergy_info='This product contains soy and wheat.' where product_code='D003';
+update product set allergy_info='This product contains soy and wheat.' where product_code='D004';
+update product set allergy_info='This product contains soy and wheat.' where product_code='D005';
+update product set allergy_info='This product contains soy and wheat.' where product_code='D008';
+update product set allergy_info='This product contains soy and sesame.' where product_code='D099';
+update product set allergy_info='This product contains soy and wheat.' where product_code='AZ-05';
+update product set allergy_info='This product contains soy and wheat.' where product_code='JW-08';

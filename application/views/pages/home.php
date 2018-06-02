@@ -17,8 +17,8 @@
                     <div class="container">
 
                         <div class="welcome-speech">
-                            <h1>Mi Le International B.V.</h1>
-                            <p>The Vegetarian/ Vegan way of life</p>
+                            <h1>The Vegetarian/ Vegan way of life</h1>
+                            <h2>Mi Le International B.V.<h2>
                         </div><!-- /.intro -->
                         
                     </div><!-- /.container -->

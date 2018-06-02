@@ -41,9 +41,10 @@
             </div>
             <div class="tab-pane" id="product-detail">
                 <div>
-                    <h6 class="text-capitalize">Ingredients: N/A</h6>
+                    <h6 class="text-capitalize">Allergy information: </h6>
+                    <p><?php echo $product['allergy_info'];?></p>
                     <h6 class="text-capitalize">Cooking recommendation:</h6>
-                    <p><?php echo $product['cooking']?></p>
+                    <p><?php echo $product['cooking'];?></p>
                 </div>                                    
             </div>
         </div>
