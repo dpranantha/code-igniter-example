@@ -1868,6 +1868,18 @@ aside .tag-widget .tags a:hover {
     color: #dadada;
 }
 
+.contact-address .address-info .opening-info-icon i {
+    position: relative;
+    padding: 150px 0px;
+    font-size: 30px;
+    color: #dadada;
+}
+
+.contact-address .address-info:hover .opening-info-icon {
+    background-color: #000;
+    border-right: 1px solid #000;
+}
+
 .contact-address .address-info .address-info-desc {
     padding: 0px 0px 16px 20px;
 }

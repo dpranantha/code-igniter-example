@@ -90,7 +90,6 @@
             <!-- contact adresses section -->
             <section class="contact-address bg-white">
                 <div class="row">
-
                     <div class="col-md-4 col-xs-12">
                         <div class="address-info">
                             <div class="row">
@@ -154,9 +153,31 @@
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                        <div class="address-info">
+                            <div class="row">
+                                <div class="col-md-3 col-xs-3">
+                                    <div class="opening-info-icon text-center center-block bg-light-gray">
+                                        <i class="fa fa-key"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-6 col-xs-6 address-info-desc">
+                                    <h3>Opening hour</h3>
+                                        <p align="right">Monday&emsp;09:00 ~ 17:30<br/>
+                                        Tuesday&emsp;09:00 ~ 17:30<br/>
+                                        Wednesday&emsp;09:00 ~ 17:30<br/>
+                                        Thursday&emsp;09:00 ~ 17:30<br/>
+                                        Friday&emsp;09:00 ~ 17:30<br/>
+                                        Saturday&emsp;&emsp;&emsp;&emsp;&nbsp;closed<br/>
+                                        Sunday&emsp;&emsp;&emsp;&emsp;&nbsp;closed
+                                </div> 
+
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </section> <!-- /.contact-address -->
-
-
 
             <!-- contact-form -->
             <section class="contact-form">
