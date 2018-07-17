@@ -1888,6 +1888,12 @@ aside .tag-widget .tags a:hover {
     font-size: 13px;
 }
 
+@media screen and (max-width: 768px ) { 
+	.address-info-desc { 
+	   text-align:left; 	   
+	} 
+ }
+
 /*-------------------------------  11.3 contact form ---------------------------*/
 
 .contact-form {

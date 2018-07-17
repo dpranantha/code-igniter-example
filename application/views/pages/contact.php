@@ -154,25 +154,26 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-xs-12">
+                    <div class="col-md-12 col-xs-12">
                         <div class="address-info">
                             <div class="row">
-                                <div class="col-md-3 col-xs-3">
+                                <div class="col-md-1 col-xs-3">
                                     <div class="opening-info-icon text-center center-block bg-light-gray">
                                         <i class="fa fa-key"></i>
                                     </div> 
                                 </div>
-                                <div class="col-md-6 col-xs-6 address-info-desc">
-                                    <h3>Opening hour</h3>
-                                        <p align="right">Monday&emsp;09:00 ~ 17:30<br/>
-                                        Tuesday&emsp;09:00 ~ 17:30<br/>
-                                        Wednesday&emsp;09:00 ~ 17:30<br/>
-                                        Thursday&emsp;09:00 ~ 17:30<br/>
-                                        Friday&emsp;09:00 ~ 17:30<br/>
-                                        Saturday&emsp;&emsp;&emsp;&emsp;&nbsp;closed<br/>
-                                        Sunday&emsp;&emsp;&emsp;&emsp;&nbsp;closed
-                                </div> 
-
+                                <div class="col-md-11 col-xs-6 address-info-desc" align="center">
+                                    <h3>Opening hours</h3>
+                                    <h6>Opening hours are subject to change in the event of public holidays - please contact us to find out more</h6>
+                                        <p>&emsp;&emsp;Monday&emsp;09:00 ~ 17:30<br/>
+                                        &emsp;&emsp;Tuesday&emsp;09:00 ~ 17:30<br/>
+                                        &nbsp;&nbsp;Wednesday&emsp;09:00 ~ 17:30<br/>
+                                        &emsp;&nbsp;&nbsp;Thursday&emsp;09:00 ~ 17:30<br/>
+                                        &emsp;&emsp;&emsp;Friday&emsp;09:00 ~ 17:30<br/>
+                                        &emsp;&nbsp;&nbsp;Saturday&emsp;&emsp;&emsp;&emsp;&nbsp;closed<br/>
+                                        &emsp;&emsp;&nbsp;Sunday&emsp;&emsp;&emsp;&emsp;&nbsp;closed<br/>
+                                        <p>*For visits please make an appointment with us*<br/>
+                                </div>                                
                             </div>
                         </div> 
                     </div>

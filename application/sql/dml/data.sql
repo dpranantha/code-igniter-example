@@ -566,3 +566,15 @@ update product set allergy_info='This product contains soy and wheat.' where pro
 update product set allergy_info='This product contains soy and sesame.' where product_code='D099';
 update product set allergy_info='This product contains soy and wheat.' where product_code='AZ-05';
 update product set allergy_info='This product contains soy and wheat.' where product_code='JW-08';
+
+update product_assets
+set url = 'assets/img/products/AZ05.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'AZ-05');
+
+update product_assets
+set url = 'assets/img/products/D099.jpg'
+where p_id in (select id 
+                from product 
+                where product_code = 'D099');
