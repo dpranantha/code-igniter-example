@@ -15,6 +15,10 @@ class Pages extends CI_Controller {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu', $data);
             $this->load->view('pages/'.$page, $data);
-            $this->load->view('templates/footer', $data);
+            if ($page == 'contact') {
+                $this->load->view('templates/footer_contact', $data);
+            } else {
+                $this->load->view('templates/footer', $data);
+            }
         }
 }

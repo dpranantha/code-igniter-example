@@ -246,6 +246,45 @@ html {
 	}
 }
 
+li.partner a {
+	color: white;
+}
+
+.partner-content {
+    padding: 0 0 0 50px;
+}
+
+.collapsible-partner {
+    padding: 0px 15px;    
+}
+.collapsible-partner ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.collapsible-partner a {
+    display:block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+input#menu {
+    display: none;
+}
+
+.partner-content {
+    max-height: 0;
+    overflow: hidden;    
+    padding: 0 0 0 50px;
+}
+
+label:hover .h5, label:active, input:hover+label, input:checked+label {
+	color:grey;	
+}
+
+input:checked ~ .partner-content {
+    max-height: 100%;
+}
 /* =-=--=-=-=-=-=-==-=-=-=-  2.3 Header   =-=-=-=-==-=-==-====-==-=- */
 
 #about-page .page-head {

@@ -89,7 +89,7 @@ class Contact extends CI_Controller {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/menu', $data);
             $this->load->view('pages/contact', $data);           
-            $this->load->view('templates/footer');     
+            $this->load->view('templates/footer_contact');     
         }        
     }
 }
