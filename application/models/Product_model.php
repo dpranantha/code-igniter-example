@@ -54,7 +54,7 @@ class Product_model extends CI_Model {
             return $query->result_array();
         }
         $st = $this->db->escape_str($search_term);
-        $query = $this->db->where("(p.name_en like '%".$st."%' or p.name_de like '%".$st."%' or p.name_cn like '%".$st."%' or p.product_code like '%".$st."%')")->get();
+        $query = $this->db->where("(p.name_en like '%".$st."%' or p.name_de like '%".$st."%' or p.name_cn like '%".$st."%' or replace(p.product_code,'-','') like '%".str_replace("-","",$st)."%')")->get();
         return $query->result_array();
     }
 
@@ -68,7 +68,7 @@ class Product_model extends CI_Model {
         ->like('name_en', $search_term)
         ->or_like('name_de', $search_term)
         ->or_like('name_cn', $search_term)
-        ->or_like('product_code', $search_term)
+        ->or_like("replace(product_code,'-','')", str_replace("-","",$search_term))
         ->get();        
         
         $result = $query->row_array();
