@@ -610,7 +610,9 @@ class CI_Pagination {
 					if ($this->cur_page === $loop)
 					{
 						// Current page
-						$output .= $this->cur_tag_open.$loop.$this->cur_tag_close;
+						// $output .= $this->cur_tag_open.$loop.$this->cur_tag_close;
+						$append = $this->prefix.$i.$this->suffix;
+						$output .= $this->cur_tag_open.'<a href="'.$base_url.$append.'"'.$attributes.'>'.$loop.'</a>'.$this->cur_tag_close;
 					}
 					elseif ($i === $base_page)
 					{

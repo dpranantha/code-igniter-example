@@ -70,6 +70,7 @@
                                 url: $(this).attr("href"),
                                 success: function(res){
                                         $("#product_list").html(res);
+                                        window.scrollTo(0,0);
                                     }
                             });
                         return false;

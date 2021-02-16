@@ -41,7 +41,7 @@ class Products extends CI_Controller {
             $config['next_tag_close'] = '</li>';
             $config['last_tag_open'] = '<li>';
             $config['last_tag_close'] = '</li>';
-            $config['cur_tag_open'] = '<li class="active"><a href="#">';
+            $config['cur_tag_open'] = '<li class="active">';
             $config['cur_tag_close'] = '</a></li>';
             $config['num_tag_open'] = '<li>';
             $config['num_tag_close'] = '</li>';
